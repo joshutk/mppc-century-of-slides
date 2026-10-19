@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>MPPC Slide Carousel</title>
+<style>
+/*BUILD:FONTS*/
+/*BUILD:CSS*/
+</style>
+</head>
+<body>
+<div id="app">
+
+  <!-- ─── SHELF: pick a tray ─── -->
+  <section id="shelf" class="shelf" aria-label="Choose a slide tray">
+    <header class="shelf-head">
+      <p class="kicker">Myers Park Presbyterian Church</p>
+      <h1>A Century of Slides</h1>
+      <p class="sub">Choose a tray, then press <strong>Forward</strong>.</p>
+    </header>
+    <ul id="trays" class="trays"></ul>
+    <footer class="shelf-foot">
+      <p id="draft-note" class="draft-note" hidden>Draft selection, not yet reviewed</p>
+      <button id="open-credits" class="link" type="button">Photo credits</button>
+    </footer>
+  </section>
+
+  <!-- ─── CREDITS ─── -->
+  <div id="credits" class="credits" role="dialog" aria-modal="true" aria-labelledby="credits-title" hidden>
+    <div class="credits-box">
+      <button id="close-credits" class="close" type="button" aria-label="Close">&times;</button>
+      <h2 id="credits-title">Photo credits</h2>
+      <p>Photographs come from the archives of Myers Park Presbyterian Church and from its members, with the exceptions listed below. The captions are adapted from <em>A Legacy of Love: One Hundred Years of Myers Park Presbyterian Church</em> by Lois Stickell.</p>
+      <dl id="credits-list"></dl>
+      <p class="fine">Slide numbers refer to each tray. The projector sound is a public-domain (CC0) recording from Freesound. Type is set in Open Sans and Libre Baskerville, both under the SIL Open Font License.</p>
+    </div>
+  </div>
+
+  <!-- ─── PROJECTOR ─── -->
+  <section id="projector" class="projector" aria-label="Slide projector" hidden>
+    <div class="topbar">
+      <button id="to-shelf" class="chip" type="button" aria-label="Back to the trays">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Trays</span>
+      </button>
+      <h2 id="tray-name" class="tray-name"></h2>
+      <button id="mute" class="chip icon" type="button" aria-pressed="false" aria-label="Mute sound">
+        <svg class="on" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <svg class="off" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M17 9l5 6M22 9l-5 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+
+    <div id="room" class="room">
+      <div id="screen" class="screen">
+        <div id="beam" class="beam lit">
+          <div class="lamp"></div>
+          <div class="mount" id="mount-a"><img alt="" draggable="false"></div>
+          <div class="mount" id="mount-b"><img alt="" draggable="false"></div>
+          <canvas id="dust" class="dust" width="800" height="800" aria-hidden="true"></canvas>
+          <div class="tint"></div>
+          <div class="vignette"></div>
+          <div id="gate-msg" class="gate-msg" hidden>
+            <p id="gate-text"></p>
+            <button id="gate-shelf" type="button">Choose another tray</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="caption" aria-live="polite">
+      <span id="cap-year" class="year"></span>
+      <span id="cap-text" class="text"></span>
+      <span id="cap-count" class="count"></span>
+    </div>
+
+    <div class="deck">
+      <button id="rev" class="key rev" type="button" aria-label="Reverse: previous slide">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 5L7 12l9 7z" fill="currentColor"/></svg>
+        <span>Reverse</span>
+      </button>
+      <div class="counter">
+        <svg id="ring" viewBox="0 0 1000 150" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Tray slot counter"></svg>
+        <p class="badge">MPPC &middot; 1926&ndash;2026</p>
+      </div>
+      <button id="fwd" class="key fwd" type="button" aria-label="Forward: next slide">
+        <span>Forward</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5l9 7-9 7z" fill="currentColor"/></svg>
+      </button>
+    </div>
+  </section>
+</div>
+<script>
+/*BUILD:JS*/
+</script>
+</body>
+</html>
